@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Photo from "./Photo"
-import PhotoCard from "./PhotoCard";
 import PhotoTitle from "./PhotoTitle";
 import PhotoDate from "./PhotoDate";
 import PhotoDesc from "./PhotoDesc";
+import styled from "styled-components";
 
+
+const APODCard = styled.div`
+    max-width: 1080px;
+    margin: 0 auto;
+    border: 2px solid #D9D9D9;
+    background: #F2F2F2;
+`;
 
 
 export default function ContainerCard () {
@@ -38,12 +45,12 @@ useEffect(() => {
 
 return (
 
-    <div className="photo_container">
-    <Photo url={photo.url} />
+    <APODCard>
+    <Photo url={photo.hdurl} />
     <PhotoTitle title={photo.title} />
     <PhotoDate date={photo.date} />
     <PhotoDesc description={photo.explanation} />
-    </div>
+    </APODCard>
 );
 
 }
