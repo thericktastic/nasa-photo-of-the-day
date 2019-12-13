@@ -6,14 +6,10 @@ import PhotoDate from "./PhotoDate";
 import PhotoDesc from "./PhotoDesc";
 import styled from "styled-components";
 
-
-const APODCard = styled.div`
+const APODContainer = styled.div`
     max-width: 1080px;
     margin: 0 auto;
-    border: 2px solid #D9D9D9;
-    background: #F2F2F2;
 `;
-
 
 export default function ContainerCard () {
 
@@ -31,26 +27,14 @@ useEffect(() => {
 
 }, []);
 
-// return (
-
-//         <div className="photo_container">
-//         <PhotoCard
-//         title = {photo.title}
-//         date = {photo.date}
-//         src = {photo.url}
-//         explanation = {photo.explanation}
-//         />
-//         </div>
-// );
-
 return (
 
-    <APODCard>
-    <Photo url={photo.hdurl} />
+    <APODContainer>
+    <Photo url={photo.url} />
     <PhotoTitle title={photo.title} />
     <PhotoDate date={photo.date} />
     <PhotoDesc description={photo.explanation} />
-    </APODCard>
+    </APODContainer>
 );
 
 }
